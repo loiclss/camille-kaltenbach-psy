@@ -26,7 +26,7 @@ const AppointmentSection = () => {
 
         <div className="max-w-2xl mx-auto">
           {/* Doctolib Card */}
-          <div className="bg-card rounded-2xl p-6 sm:p-8 md:p-12 shadow-elegant border border-border/50 text-center">
+          <div className="bg-card rounded-2xl p-6 sm:p-8 md:p-12 shadow-elegant border border-border/80 text-center">
             {/* Doctolib Logo/Icon */}
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#107ACA]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 sm:mb-8">
               <CalendarIcon className="w-8 h-8 sm:w-10 sm:h-10 text-[#107ACA]" />

@@ -79,7 +79,7 @@ const AboutSection = () => {
               {/* Decorative Line */}
               <div className="w-16 h-0.5 bg-gradient-primary rounded-full my-8" />
               
-              <div className="bg-secondary/50 rounded-2xl p-6 border border-border/50">
+              <div className="bg-secondary/40 rounded-2xl p-6 border border-primary/20 shadow-soft">
                 <h4 className="font-serif text-xl text-foreground mb-3">Ma pratique</h4>
                 <p className="text-muted-foreground leading-relaxed text-[15px]">
                   Avec une écoute active bienveillante et sans jugement, je souhaite vous accompagner vers une meilleure connaissance et acceptation de vous-même. Ce travail peut amener à des changements en profondeur afin de construire une relation plus apaisée avec soi, les autres et son environnement. Je propose un espace sécurisant pour laisser libre cours à vos pensées, paroles et émotions, pour tenter de mieux comprendre votre fonctionnement et dépasser ainsi les difficultés que vous rencontrez.
@@ -96,9 +96,9 @@ const AboutSection = () => {
             return (
               <div 
                 key={index} 
-                className="group bg-card p-8 rounded-2xl shadow-soft hover-lift border border-border/50 text-center"
+                className="group bg-card p-8 rounded-2xl shadow-soft hover-lift border border-border/80 text-center"
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors duration-300">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors duration-300 border border-primary/10">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-serif text-foreground mb-3">{value.title}</h3>

@@ -47,7 +47,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto">
           {/* Map */}
           <div className="order-2 lg:order-1">
-            <div className="bg-card rounded-2xl overflow-hidden shadow-elegant border border-border/50 h-full min-h-[400px]">
+            <div className="bg-card rounded-2xl overflow-hidden shadow-elegant border border-border/80 h-full min-h-[400px]">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2668.5!2d7.4947!3d48.0603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47919c8b8c8c8c8c%3A0x0!2s41%20Rue%20Marie%20Gocker%2C%2068280%20Sundhoffen!5e0!3m2!1sfr!2sfr!4v1234567890" 
                 width="100%" 
@@ -64,7 +64,7 @@ const ContactSection = () => {
 
           {/* Contact Info */}
           <div className="order-1 lg:order-2">
-            <div className="bg-card rounded-2xl p-8 shadow-elegant border border-border/50 mb-6">
+            <div className="bg-card rounded-2xl p-8 shadow-elegant border border-border/80 mb-6">
               <h3 className="font-serif text-2xl text-foreground mb-6">Informations de contact</h3>
               <div className="space-y-5">
                 {contactInfo.map((info, index) => {
@@ -96,7 +96,7 @@ const ContactSection = () => {
             </div>
 
             {/* Privacy Notice */}
-            <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10">
+            <div className="bg-primary/5 rounded-2xl p-6 border border-primary/20 shadow-soft">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <span className="font-medium text-foreground">Confidentialité :</span> Toutes vos informations sont traitées de manière confidentielle.
               </p>

@@ -21,7 +21,7 @@ const CabinetSection = () => {
         {/* Images Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {/* Image 1 - Salle d'attente */}
-          <div className="group relative overflow-hidden rounded-2xl shadow-elegant">
+          <div className="group relative overflow-hidden rounded-2xl shadow-elegant border border-border/80">
             <img 
               alt="Salle d'attente du cabinet de psychologie" 
               className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -34,7 +34,7 @@ const CabinetSection = () => {
           </div>
 
           {/* Image 2 - Salle de consultation */}
-          <div className="group relative overflow-hidden rounded-2xl shadow-elegant">
+          <div className="group relative overflow-hidden rounded-2xl shadow-elegant border border-border/80">
             <img 
               alt="Salle de consultation du cabinet de psychologie" 
               className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" 
