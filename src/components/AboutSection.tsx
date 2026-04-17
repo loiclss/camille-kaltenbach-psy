@@ -41,12 +41,12 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-16 md:mb-24">
           {/* Image Column */}
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative max-w-sm mx-auto lg:max-w-none">
+            <div className="relative max-w-[220px] sm:max-w-sm mx-auto lg:max-w-none">
               {/* Main image */}
               <div className="relative overflow-hidden rounded-3xl shadow-large">
                 <img
                   alt="Camille Kaltenbach - Psychologue clinicienne"
-                  className="w-full aspect-[3/4] object-cover object-top"
+                  className="w-full aspect-[3/4] sm:aspect-[3/4] object-cover object-top"
                   src={portraitImage}
                 />
                 {/* Subtle bottom gradient */}
