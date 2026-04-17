@@ -44,39 +44,48 @@ const ConsultationsSection = () => {
   ];
 
   return (
-    <section id="consultations" className="section-padding bg-secondary/30 relative overflow-hidden">
-      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
-      
-      <div className="container mx-auto px-4 sm:px-6 relative">
+    <section id="consultations" className="section-padding relative overflow-hidden"
+      style={{ background: "linear-gradient(180deg, hsl(42 28% 96%), hsl(88 14% 93%))" }}
+    >
+      {/* Ambient */}
+      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full blur-[180px] opacity-50 pointer-events-none"
+        style={{ background: "hsl(88 25% 65% / 0.12)" }} />
+
+      <div className="container mx-auto px-5 sm:px-6 relative">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-20">
-          <p className="text-primary font-medium tracking-widest uppercase text-xs sm:text-sm mb-3 sm:mb-4">Accompagnement</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-display-sm font-serif text-foreground mb-4 sm:mb-6">
+          <p className="section-label mb-4">Accompagnement</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-display-sm font-serif text-foreground mb-4">
             Pour qui et pourquoi ?
           </h2>
         </div>
 
         {/* Consultation Types */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-20">
+        <div className="grid md:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto mb-16 md:mb-20">
           {consultations.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div 
-                key={index} 
-                className="group bg-card rounded-2xl p-8 shadow-soft hover-lift border border-border/80"
+              <div
+                key={index}
+                className="group glass rounded-2xl p-6 sm:p-8 hover-lift"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
+                  style={{
+                    background: "hsl(88 32% 42% / 0.10)",
+                    border: "1px solid hsl(88 32% 42% / 0.18)"
+                  }}
+                >
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-serif text-foreground mb-3">{service.title}</h3>
+                <h3 className="text-lg sm:text-xl font-serif text-foreground mb-3">{service.title}</h3>
                 {service.description && (
-                  <p className="text-primary font-medium text-sm mb-4">{service.description}</p>
+                  <p className="pill mb-4 text-xs">{service.description}</p>
                 )}
                 {service.details.length > 0 && (
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2">
                     {service.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-muted-foreground">
-                        <span className="text-primary mr-2.5 mt-0.5">•</span>
+                      <li key={idx} className="flex items-start text-sm text-muted-foreground gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 flex-shrink-0" />
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -89,53 +98,59 @@ const ConsultationsSection = () => {
 
         {/* Practical Info */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-10 text-center">
+          <div className="section-divider mb-10 md:mb-14" />
+          <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-8 sm:mb-10 text-center">
             Informations pratiques
           </h3>
-          
+
           {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {practicalInfo.map((info, index) => {
               const Icon = info.icon;
               return (
-                <div 
-                  key={index} 
-                  className="bg-card rounded-xl p-6 text-center shadow-soft border border-border/80 hover-lift"
+                <div
+                  key={index}
+                  className="glass-warm rounded-2xl p-5 sm:p-6 text-center hover-lift"
                 >
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-4"
+                    style={{
+                      background: "hsl(88 32% 42% / 0.10)",
+                      border: "1px solid hsl(88 32% 42% / 0.15)"
+                    }}
+                  >
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground mb-1">{info.title}</p>
-                  <p className="text-2xl font-serif text-foreground mb-1">{info.value}</p>
-                  <p className="text-xs text-muted-foreground">{info.description}</p>
+                  <p className="text-xs text-muted-foreground mb-1 font-medium uppercase tracking-wide">{info.title}</p>
+                  <p className="text-2xl sm:text-3xl font-serif text-foreground mb-1">{info.value}</p>
+                  <p className="text-xs text-muted-foreground leading-snug">{info.description}</p>
                 </div>
               );
             })}
           </div>
 
           {/* Info Cards */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-card rounded-2xl p-6 shadow-soft border border-border/50">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+            <div className="glass rounded-2xl p-5 sm:p-6">
               <div className="flex items-start gap-4">
-                <span className="text-2xl">📋</span>
+                <span className="text-xl sm:text-2xl flex-shrink-0">📋</span>
                 <div>
-                  <h4 className="font-serif text-lg text-foreground mb-2">Remboursement</h4>
+                  <h4 className="font-serif text-base sm:text-lg text-foreground mb-2">Remboursement</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    La Sécurité sociale ne prend pas en charge les consultations de psychologie. 
+                    La Sécurité sociale ne prend pas en charge les consultations de psychologie.
                     Une facture vous sera transmise pour un éventuel remboursement par votre mutuelle.
                   </p>
                 </div>
               </div>
             </div>
-            
-            <div className="bg-card rounded-2xl p-6 shadow-soft border border-border/80">
+
+            <div className="glass rounded-2xl p-5 sm:p-6">
               <div className="flex items-start gap-4">
-                <span className="text-2xl">⏰</span>
+                <span className="text-xl sm:text-2xl flex-shrink-0">⏰</span>
                 <div>
-                  <h4 className="font-serif text-lg text-foreground mb-2">Annulation</h4>
+                  <h4 className="font-serif text-base sm:text-lg text-foreground mb-2">Annulation</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Annulation possible sur Doctolib jusqu'à 24h avant. Passé ce délai, 
-                    contactez-moi au <span className="text-foreground font-medium">06 36 23 33 22</span>.
+                    Annulation possible sur Doctolib jusqu'à 24h avant. Passé ce délai,
+                    contactez-moi au <span className="text-foreground font-semibold">06 36 23 33 22</span>.
                   </p>
                 </div>
               </div>
