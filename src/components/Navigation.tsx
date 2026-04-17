@@ -6,30 +6,19 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60);
-      if (window.scrollY > 60) setIsMobileMenuOpen(false);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [isMobileMenuOpen]);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsMobileMenuOpen(false);
   };
 
   const navLinks = [
@@ -42,132 +31,94 @@ const Navigation = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "py-3 border-b border-border/40"
-            : "py-5"
-        }`}
-        style={isScrolled ? {
-          background: "hsl(42 28% 96% / 0.92)",
-          backdropFilter: "blur(20px) saturate(180%)",
-          WebkitBackdropFilter: "blur(20px) saturate(180%)",
-          boxShadow: "0 1px 20px -4px hsl(24 18% 16% / 0.08)"
-        } : {}}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          background: "hsl(38 28% 96% / 0.96)",
+          backdropFilter: "blur(16px) saturate(160%)",
+          WebkitBackdropFilter: "blur(16px) saturate(160%)",
+          borderBottom: "1px solid hsl(20 14% 87%)",
+          padding: isScrolled ? "12px 0" : "18px 0",
+          boxShadow: isScrolled ? "0 1px 16px -4px hsl(20 18% 11% / 0.08)" : "none",
+        }}
       >
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <button
-              onClick={() => scrollToSection("accueil")}
-              className={`font-serif transition-all duration-300 ${
-                isScrolled
-                  ? "text-foreground text-xl"
-                  : "text-white drop-shadow-lg text-xl sm:text-2xl"
-              }`}
-            >
-              Camille Kaltenbach
-            </button>
+        <div className="container mx-auto px-5 sm:px-8 flex items-center justify-between">
+          {/* Logo */}
+          <button
+            onClick={() => scrollToSection("accueil")}
+            className="font-serif text-lg sm:text-xl text-foreground hover:text-primary transition-colors duration-200"
+          >
+            Camille Kaltenbach
+          </button>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-8">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className={`text-sm font-medium transition-all duration-300 relative group ${
-                    isScrolled
-                      ? "text-muted-foreground hover:text-foreground"
-                      : "text-white/85 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gradient-to-r from-primary to-primary-light transition-all duration-300 group-hover:w-full rounded-full" />
-                </button>
-              ))}
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-7 lg:gap-9">
+            {navLinks.map((link) => (
               <button
-                onClick={() => scrollToSection("rendez-vous")}
-                className={`ml-2 flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  isScrolled
-                    ? "bg-primary text-white hover:bg-primary-dark shadow-soft hover:shadow-glow"
-                    : "bg-white/12 backdrop-blur-sm text-white border border-white/30 hover:bg-white hover:text-foreground"
-                }`}
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200 relative group"
               >
-                <CalendarCheck className="w-4 h-4" />
-                Rendez-vous
+                {link.label}
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary transition-all duration-250 group-hover:w-full rounded-full" />
               </button>
-            </div>
-
-            {/* Mobile Menu Button */}
+            ))}
             <button
-              className={`md:hidden tap-target rounded-xl transition-all duration-200 ${
-                isScrolled
-                  ? "text-foreground hover:bg-secondary"
-                  : "text-white hover:bg-white/10"
-              }`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              onClick={() => scrollToSection("rendez-vous")}
+              className="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-semibold
+                         px-5 py-2.5 rounded-lg transition-all duration-250 hover:shadow-glow hover:-translate-y-0.5"
             >
-              {isMobileMenuOpen
-                ? <X className="h-5 w-5" />
-                : <Menu className="h-5 w-5" />
-              }
+              <CalendarCheck className="w-3.5 h-3.5" />
+              Rendez-vous
             </button>
           </div>
+
+          {/* Mobile toggle */}
+          <button
+            className="md:hidden tap-target flex items-center justify-center text-foreground"
+            onClick={() => setIsMobileMenuOpen(v => !v)}
+            aria-label={isMobileMenuOpen ? "Fermer" : "Menu"}
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </nav>
 
-      {/* Mobile Menu — full screen overlay */}
+      {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-400 ${
-          isMobileMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-40 md:hidden flex flex-col transition-all duration-300 ${
+          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{
-          background: "hsl(42 28% 96% / 0.97)",
-          backdropFilter: "blur(24px) saturate(200%)",
-          WebkitBackdropFilter: "blur(24px) saturate(200%)",
-        }}
+        style={{ background: "hsl(38 28% 96%)" }}
       >
-        {/* Close button at top right */}
-        <div className="flex justify-end p-5">
-          <button
-            className="tap-target text-foreground rounded-xl hover:bg-secondary transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <X className="h-6 w-6" />
+        <div className="flex items-center justify-between px-5 py-5 border-b border-border">
+          <span className="font-serif text-lg text-foreground">Camille Kaltenbach</span>
+          <button className="tap-target flex items-center justify-center text-foreground" onClick={() => setIsMobileMenuOpen(false)}>
+            <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Nav Links */}
-        <div className="flex flex-col items-center justify-center gap-2 h-[calc(100vh-120px)]">
-          {/* Brand */}
-          <p className="font-serif text-2xl text-foreground mb-8">Camille Kaltenbach</p>
-
-          {navLinks.map((link, idx) => (
+        <div className="flex-1 flex flex-col justify-center px-5 gap-1">
+          {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="w-full max-w-xs text-center py-4 text-lg font-medium text-foreground/80 hover:text-primary transition-colors rounded-2xl hover:bg-secondary/60"
-              style={{ animationDelay: `${idx * 0.05}s` }}
+              className="w-full text-left py-4 px-4 text-xl font-serif text-foreground/80 hover:text-primary
+                         hover:bg-white rounded-xl transition-all duration-200"
             >
               {link.label}
             </button>
           ))}
+        </div>
 
-          {/* CTA */}
+        <div className="px-5 pb-10 pt-4 border-t border-border">
           <button
             onClick={() => scrollToSection("rendez-vous")}
-            className="mt-8 w-full max-w-xs flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-2xl text-base font-medium hover:bg-primary-dark transition-all duration-300 shadow-medium hover:shadow-glow"
+            className="w-full flex items-center justify-center gap-2.5 bg-primary text-white
+                       py-4 rounded-xl text-base font-medium hover:bg-primary-dark transition-all duration-250"
           >
             <CalendarCheck className="w-5 h-5" />
             Prendre rendez-vous
           </button>
-
-          {/* Doctolib hint */}
-          <p className="mt-4 text-xs text-muted-foreground text-center">
-            Via Doctolib · Confirmation immédiate
-          </p>
         </div>
       </div>
     </>

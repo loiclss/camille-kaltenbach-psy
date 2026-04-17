@@ -1,51 +1,42 @@
-import { Phone, CalendarCheck } from "lucide-react";
+import { CalendarCheck } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <footer
-      className="relative overflow-hidden"
-      style={{ background: "hsl(24 18% 14%)" }}
-    >
-      {/* Ambient */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] rounded-full blur-[160px] opacity-20 pointer-events-none"
-        style={{ background: "hsl(88 32% 42%)" }} />
+    <footer style={{ background: "hsl(20 18% 10%)" }}>
+      <div className="container mx-auto px-5 sm:px-8">
 
-      <div className="container mx-auto px-5 sm:px-6 relative">
-        {/* Main footer */}
-        <div className="py-12 sm:py-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8">
+        {/* Main */}
+        <div className="py-12 sm:py-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <button
               onClick={() => scrollToSection("accueil")}
-              className="font-serif text-xl sm:text-2xl text-white mb-3 block text-left hover:text-primary-light transition-colors duration-300"
+              className="font-serif text-xl text-white mb-2 block text-left hover:text-primary-light transition-colors"
             >
               Camille Kaltenbach
             </button>
-            <p className="text-sm text-white/50 mb-2">Psychologue Clinicienne · Psychothérapeute</p>
-            <p className="text-sm text-white/40">Sundhoffen, Alsace</p>
+            <p className="text-sm text-white/40 mb-1">Psychologue clinicienne · Psychothérapeute</p>
+            <p className="text-xs text-white/30">Sundhoffen, Alsace</p>
           </div>
 
-          {/* Navigation */}
+          {/* Nav */}
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-5">Navigation</p>
-            <div className="flex flex-col gap-3">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/30 mb-4">Navigation</p>
+            <div className="space-y-2.5">
               {[
                 { id: "a-propos", label: "Qui suis-je" },
                 { id: "consultations", label: "Consultations" },
                 { id: "cabinet", label: "Le Cabinet" },
                 { id: "contact", label: "Contact" },
-              ].map(link => (
-                <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-sm text-white/55 hover:text-white transition-colors duration-200 text-left"
+              ].map(l => (
+                <button key={l.id} onClick={() => scrollToSection(l.id)}
+                  className="block text-sm text-white/45 hover:text-white transition-colors text-left"
                 >
-                  {link.label}
+                  {l.label}
                 </button>
               ))}
             </div>
@@ -53,13 +44,14 @@ const Footer = () => {
 
           {/* CTA */}
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-5">Consultation</p>
-            <p className="text-sm text-white/55 mb-5 leading-relaxed">
-              Prendre rendez-vous en ligne facilement, avec confirmation immédiate.
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/30 mb-4">Votre suivi</p>
+            <p className="text-sm text-white/40 mb-5 leading-relaxed">
+              Prenez rendez-vous en ligne facilement via Doctolib.
             </p>
             <button
               onClick={() => scrollToSection("rendez-vous")}
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 py-3 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-glow"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white
+                         text-sm font-medium px-5 py-2.5 rounded-lg transition-all duration-250 hover:-translate-y-0.5"
             >
               <CalendarCheck className="w-4 h-4" />
               Prendre rendez-vous
@@ -67,16 +59,17 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Camille Kaltenbach · Tous droits réservés
+        {/* Bottom */}
+        <div className="border-t border-white/6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[11px] text-white/25">
+            © {new Date().getFullYear()} Camille Kaltenbach — Tous droits réservés
           </p>
-          <div className="flex gap-6 text-xs text-white/35">
+          <div className="flex gap-5 text-[11px] text-white/30">
             <button className="hover:text-white/60 transition-colors">Mentions légales</button>
             <button className="hover:text-white/60 transition-colors">Confidentialité</button>
           </div>
         </div>
+
       </div>
     </footer>
   );
