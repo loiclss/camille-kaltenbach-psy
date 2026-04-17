@@ -29,15 +29,15 @@ const HeroSection = () => {
       <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[120px] opacity-40 pointer-events-none" />
 
       {/* Content */}
-      <div className="container mx-auto px-5 sm:px-6 relative z-10 pt-24 pb-16 md:pt-0 md:pb-0">
+      <div className="container mx-auto px-5 sm:px-6 relative z-10 pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-0 md:pb-0">
         <div className="max-w-2xl">
 
           {/* Pill badge */}
           <div
-            className="inline-flex items-center gap-2 mb-6 sm:mb-8 opacity-0 animate-fade-up"
+            className="inline-flex items-center gap-2 mb-4 sm:mb-6 opacity-0 animate-fade-up"
             style={{ animationDelay: '0.05s' }}
           >
-            <span className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase"
+            <span className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase"
               style={{
                 background: "hsl(0 0% 100% / 0.12)",
                 backdropFilter: "blur(12px)",
@@ -52,7 +52,7 @@ const HeroSection = () => {
 
           {/* Main Title */}
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-4 sm:mb-5 leading-[1.08] tracking-tight opacity-0 animate-fade-up"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-3 sm:mb-4 leading-[1.08] tracking-tight opacity-0 animate-fade-up"
             style={{ animationDelay: '0.15s' }}
           >
             Camille<br />Kaltenbach
@@ -60,7 +60,7 @@ const HeroSection = () => {
 
           {/* Separator */}
           <div
-            className="w-10 h-0.5 rounded-full mb-5 sm:mb-6 opacity-0 animate-fade-up"
+            className="w-8 h-0.5 rounded-full mb-4 sm:mb-5 opacity-0 animate-fade-up"
             style={{
               animationDelay: '0.25s',
               background: "linear-gradient(90deg, hsl(88 38% 65%), transparent)"
@@ -69,13 +69,13 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p
-            className="text-base sm:text-xl md:text-2xl text-white/85 mb-1 font-light opacity-0 animate-fade-up"
+            className="text-sm sm:text-xl md:text-2xl text-white/85 mb-1 font-light opacity-0 animate-fade-up"
             style={{ animationDelay: '0.3s' }}
           >
             Psychologue clinicienne · Psychothérapeute
           </p>
           <p
-            className="text-sm sm:text-base text-white/60 mb-10 sm:mb-12 font-light opacity-0 animate-fade-up"
+            className="text-xs sm:text-base text-white/60 mb-8 sm:mb-12 font-light opacity-0 animate-fade-up"
             style={{ animationDelay: '0.38s' }}
           >
             à Sundhoffen
@@ -89,7 +89,7 @@ const HeroSection = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection("rendez-vous")}
-              className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-7 py-6 text-sm sm:text-base font-medium rounded-2xl shadow-large hover:shadow-glow transition-all duration-300 hover:-translate-y-0.5 gap-2"
+              className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-6 sm:px-7 py-4 sm:py-6 text-sm sm:text-base font-medium rounded-2xl shadow-large hover:shadow-glow transition-all duration-300 hover:-translate-y-0.5 gap-2"
             >
               <CalendarCheck className="w-4 h-4 sm:w-5 sm:h-5" />
               Prendre rendez-vous
@@ -98,7 +98,7 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("a-propos")}
-              className="w-full sm:w-auto border border-white/30 text-white py-6 px-7 text-sm sm:text-base font-medium rounded-2xl transition-all duration-300 hover:-translate-y-0.5"
+              className="w-full sm:w-auto border border-white/30 text-white py-4 sm:py-6 px-6 sm:px-7 text-sm sm:text-base font-medium rounded-2xl transition-all duration-300 hover:-translate-y-0.5"
               style={{
                 background: "hsl(0 0% 100% / 0.08)",
                 backdropFilter: "blur(12px)",
