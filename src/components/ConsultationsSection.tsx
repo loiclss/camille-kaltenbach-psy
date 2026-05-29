@@ -84,9 +84,8 @@ const ConsultationsSection = () => {
                 {service.details.length > 0 && (
                   <ul className="space-y-2">
                     {service.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-muted-foreground gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 flex-shrink-0" />
-                        <span>{detail}</span>
+                      <li key={idx} className="text-sm text-muted-foreground">
+                        {detail}
                       </li>
                     ))}
                   </ul>
