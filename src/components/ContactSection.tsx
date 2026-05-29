@@ -39,7 +39,7 @@ const ContactSection = () => {
         <div className="text-center mb-12 md:mb-16">
           <p className="section-label mb-4">Contact</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-display-sm font-serif text-foreground mb-4">
-            Contacter le cabinet de psychologie à Sundhoffen
+            Contacter le cabinet de psychologie proche de Colmar
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto px-2">
             N'hésitez pas à me contacter pour toute question ou pour prendre rendez-vous en cabinet.

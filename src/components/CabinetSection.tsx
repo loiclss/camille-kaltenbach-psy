@@ -13,7 +13,7 @@ const CabinetSection = () => {
         <div className="text-center mb-12 md:mb-16">
           <p className="section-label mb-4">L'espace</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-display-sm font-serif text-foreground mb-4 sm:mb-5">
-            Cabinet de psychologie à Sundhoffen
+            Cabinet de psychologie proche de Colmar
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed px-2">
             Le cabinet est idéalement situé à Sundhoffen dans le Haut-Rhin (68), à proximité immédiate de Colmar, Horbourg-Wihr et Andolsheim. L'espace de consultation est ouvert du lundi au jeudi avec accès PMR et parking gratuit.

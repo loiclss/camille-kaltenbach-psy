@@ -29,7 +29,7 @@ const AppointmentSection = () => {
         <div className="text-center mb-12 md:mb-16">
           <p className="section-label mb-4">Réservation</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-display-sm font-serif text-foreground mb-4">
-            Prendre rendez-vous avec votre psychologue à Sundhoffen
+            Prendre rendez-vous avec votre psychologue à Colmar (Sundhoffen)
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
             Réservez votre consultation directement sur Doctolib pour un suivi en cabinet ou en téléconsultation depuis Colmar et sa région.

@@ -46,7 +46,7 @@ const HeroSection = () => {
               }}
             >
               <Sparkles className="w-3 h-3" />
-              Cabinet à Sundhoffen
+              Cabinet proche de Colmar
             </span>
           </div>
 
@@ -72,7 +72,7 @@ const HeroSection = () => {
             className="text-sm sm:text-xl md:text-2xl text-white/85 mb-1 font-light opacity-0 animate-fade-up"
             style={{ animationDelay: '0.3s' }}
           >
-            Psychologue à Sundhoffen · Psychothérapeute
+            Psychologue à Colmar (Sundhoffen) · Psychothérapeute
           </h2>
           <p
             className="text-xs sm:text-base text-white/60 mb-8 sm:mb-12 font-light opacity-0 animate-fade-up"
