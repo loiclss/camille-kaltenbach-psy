@@ -67,11 +67,11 @@ const AboutSection = () => {
           {/* Text Column */}
           <div className="lg:col-span-7 order-1 lg:order-2">
             <div className="max-w-xl">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-foreground mb-1">
-                Camille Kaltenbach
-              </h3>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-foreground mb-1">
+                Camille Kaltenbach — Psychologue à Sundhoffen
+              </h2>
               <p className="text-primary font-semibold text-sm sm:text-base mb-7 sm:mb-8 tracking-wide">
-                Psychologue Clinicienne · Psychothérapeute
+                Psychologue Clinicienne · Psychothérapeute (Haut-Rhin - 68)
               </p>
 
               <div className="space-y-4 text-muted-foreground leading-relaxed text-sm sm:text-base">
@@ -80,6 +80,9 @@ const AboutSection = () => {
                 </p>
                 <p>
                   Avant de m'installer en cabinet libéral à Sundhoffen, j'ai travaillé au sein du Centre Hospitalier Spécialisé de Sarreguemines (en psychiatrie), ainsi qu'en Centre Médico-Psychologique (CMP).
+                </p>
+                <p>
+                  Mon cabinet de psychologie, idéalement situé à Sundhoffen, accueille des patients du Haut-Rhin (68) et de la région de Colmar, y compris les communes limitrophes telles que Horbourg-Wihr, Andolsheim, Bischwihr et Sainte-Croix-en-Plaine.
                 </p>
                 <p>
                   Lors de mes études, j'ai également pu me former et exercer au sein d'un CMP pour enfants et adolescents, ainsi qu'auprès de professionnels de l'Administration pénitentiaire.

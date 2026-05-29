@@ -56,7 +56,7 @@ const ConsultationsSection = () => {
         <div className="text-center mb-12 md:mb-20">
           <p className="section-label mb-4">Accompagnement</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-display-sm font-serif text-foreground mb-4">
-            Pour qui et pourquoi ?
+            Thérapie à Sundhoffen : pour qui et pourquoi ?
           </h2>
         </div>
 

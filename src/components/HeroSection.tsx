@@ -68,17 +68,17 @@ const HeroSection = () => {
           />
 
           {/* Subtitle */}
-          <p
+          <h2
             className="text-sm sm:text-xl md:text-2xl text-white/85 mb-1 font-light opacity-0 animate-fade-up"
             style={{ animationDelay: '0.3s' }}
           >
-            Psychologue clinicienne · Psychothérapeute
-          </p>
+            Psychologue à Sundhoffen · Psychothérapeute
+          </h2>
           <p
             className="text-xs sm:text-base text-white/60 mb-8 sm:mb-12 font-light opacity-0 animate-fade-up"
             style={{ animationDelay: '0.38s' }}
           >
-            à Sundhoffen
+            Cabinet de psychologie clinique (Haut-Rhin - 68)
           </p>
 
           {/* CTA Buttons */}

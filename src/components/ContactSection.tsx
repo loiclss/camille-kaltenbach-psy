@@ -39,10 +39,10 @@ const ContactSection = () => {
         <div className="text-center mb-12 md:mb-16">
           <p className="section-label mb-4">Contact</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-display-sm font-serif text-foreground mb-4">
-            Me contacter
+            Contacter le cabinet de psychologie à Sundhoffen
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto px-2">
-            N'hésitez pas à me contacter pour toute question ou pour prendre rendez-vous.
+            N'hésitez pas à me contacter pour toute question ou pour prendre rendez-vous en cabinet.
           </p>
         </div>
 
@@ -106,7 +106,14 @@ const ContactSection = () => {
             {/* Privacy Notice */}
             <div className="glass-sage rounded-2xl p-5 sm:p-6">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">Confidentialité :</span> Toutes vos informations sont traitées de manière confidentielle.
+                <span className="font-semibold text-foreground">Confidentialité :</span> Toutes vos consultations et informations sont strictement soumises au secret professionnel et traitées de manière confidentielle.
+              </p>
+            </div>
+
+            {/* Localisation / Zone d'intervention */}
+            <div className="glass rounded-2xl p-5 sm:p-6">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <span className="font-semibold text-foreground">Zone d'intervention :</span> Le cabinet est idéalement situé à Sundhoffen, accueillant les résidents de Colmar, Sainte-Croix-en-Plaine, Horbourg-Wihr, Andolsheim, Bischwihr et d'autres communes du Haut-Rhin (Alsace - 68).
               </p>
             </div>
           </div>
