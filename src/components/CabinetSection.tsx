@@ -25,18 +25,10 @@ const CabinetSection = () => {
           {/* Salle d'attente */}
           <div className="group relative overflow-hidden rounded-3xl shadow-elegant hover-lift cursor-default">
             <img
-              alt="Salle d'attente du cabinet de psychologie"
+              alt="Espace d'accueil et d'attente du cabinet de psychologie"
               className="w-full aspect-[4/3] sm:aspect-[16/11] object-cover transition-transform duration-700 group-hover:scale-105"
               src={waitingRoomImage}
             />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent" />
-            {/* Caption — glass pill */}
-            <div className="absolute bottom-5 left-5">
-              <div className="glass rounded-xl px-4 py-2.5">
-                <h3 className="text-sm sm:text-base font-serif text-foreground">Salle d'attente</h3>
-              </div>
-            </div>
           </div>
 
           {/* Salle de consultation */}
@@ -46,14 +38,6 @@ const CabinetSection = () => {
               className="w-full aspect-[4/3] sm:aspect-[16/11] object-cover transition-transform duration-700 group-hover:scale-105"
               src={armchairImage}
             />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent" />
-            {/* Caption — glass pill */}
-            <div className="absolute bottom-5 left-5">
-              <div className="glass rounded-xl px-4 py-2.5">
-                <h3 className="text-sm sm:text-base font-serif text-foreground">Salle de consultation</h3>
-              </div>
-            </div>
           </div>
         </div>
       </div>
